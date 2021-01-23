@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>系统管理员后台管理页面</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/axios-0.18.0.js"></script>
+    <script src="js/vue.js"></script>
+
+</head>
+<body>
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <h2>envStage_base系统管理</h2>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-2">
+                <ul class="nav nav-pills nav-stacked">
+                    <li role="presentation" class="active"><a href="#">Home</a></li>
+                    <li role="presentation"><a href="#">Profile</a></li>
+                    <li role="presentation"><a href="#">Messages</a></li>
+                </ul>
+            </div>
+            <div class="col-md-9">
+                <div>
+<!--                    <table class="table table-hover" >-->
+<!--                        <thead>-->
+<!--                        <tr>-->
+<!--                            <th>#</th>-->
+<!--                            <th>First Name</th>-->
+<!--                            <th>Last Name</th>-->
+<!--                            <th>Username</th>-->
+<!--                        </tr>-->
+<!--                        </thead>-->
+<!--                        <tbody>-->
+<!--                        <tr>-->
+<!--                            <th scope="row">1</th>-->
+<!--                            <td>Mark</td>-->
+<!--                            <td>Otto</td>-->
+<!--                            <td>@mdo</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <th scope="row">2</th>-->
+<!--                            <td>Jacob</td>-->
+<!--                            <td>Thornton</td>-->
+<!--                            <td>@fat</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <th scope="row">3</th>-->
+<!--                            <td>Larry</td>-->
+<!--                            <td>the Bird</td>-->
+<!--                            <td>@twitter</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <th scope="row">1</th>-->
+<!--                            <td>Mark</td>-->
+<!--                            <td>Otto</td>-->
+<!--                            <td>@mdo</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <th scope="row">2</th>-->
+<!--                            <td>Jacob</td>-->
+<!--                            <td>Thornton</td>-->
+<!--                            <td>@fat</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <th scope="row">3</th>-->
+<!--                            <td>Larry</td>-->
+<!--                            <td>the Bird</td>-->
+<!--                            <td>@twitter</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <th scope="row">1</th>-->
+<!--                            <td>Mark</td>-->
+<!--                            <td>Otto</td>-->
+<!--                            <td>@mdo</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <th scope="row">2</th>-->
+<!--                            <td>Jacob</td>-->
+<!--                            <td>Thornton</td>-->
+<!--                            <td>@fat</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <th scope="row">3</th>-->
+<!--                            <td>Larry</td>-->
+<!--                            <td>the Bird</td>-->
+<!--                            <td>@twitter</td>-->
+<!--                        </tr>-->
+<!--                        </tbody>-->
+<!--                    </table>-->
+                </div>
+                <div id="getInfo">
+                    <form class="form-inline">
+                        <input type="text" class="form-control" v-model="message">
+                        <button type="button" class="btn btn-success" @click="press">获取数据</button>
+<!--                        <input type="button" value="更新数据" class="btn btn-default" @click="press">-->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el:'#getInfo',
+            data:{
+              message:'点击按钮获取当前时间'
+            },
+            methods:{
+                press:function () {
+                    let that = this;
+                    axios.get('/getInfoServlet?para=1')
+                        .then(function (response) {
+                            that.message = response.data.msg;
+                            //that.message = 'success'
+                            console.log('hello');
+                            console.log(response);
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>

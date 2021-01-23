@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>源一川.png</file>
+        <file>over.jpg</file>
+    </qresource>
+</RCC>

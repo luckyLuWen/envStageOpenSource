@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello,envStage_base</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!--导入布局js，共享header和footer-->
+    <script type="text/javascript" src="js/include.js"></script>
+    <script>
+        $(function () {
+            //1.给登录按钮绑定单击事件
+            $("#login").click(function () {
+                        location.href="login.html";
+
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="jumbotron" >
+        <div class="container">
+            <h1>Hello, envStage_base!</h1>
+            <p>​数据云端处理系统（envStage_base），首先需要了解数据的来源**，然后进行数据的获取与拆分。之后对以上数据进行多角度^的处理以最终符合客户需求为目标设计一个适当的系统。用户需要在浏览器中输入网址，打开网站首页，查看终端获取的数据；用户需要增加一个设备，需要向服务器提交设备相关信息后获得该新终端的数据信息；用户需要对设备信息进行调整，包括配置信息（传感器类型等）的改变或者移除设备；用户需要进行历史回顾与灵活的对数据进行处理，包括导出数据，导入配置，简单计算平均值；整个云端处理系统基于Web程序进行开发，提供方便的可视化交互界面与简单的数据处理。</p>
+            <p>​数据云端处理系统（envStage_base），首先需要了解数据的来源**，然后进行数据的获取与拆分。之后对以上数据进行多角度^的处理以最终符合客户需求为目标设计一个适当的系统。用户需要在浏览器中输入网址，打开网站首页，查看终端获取的数据；用户需要增加一个设备，需要向服务器提交设备相关信息后获得该新终端的数据信息；用户需要对设备信息进行调整，包括配置信息（传感器类型等）的改变或者移除设备；用户需要进行历史回顾与灵活的对数据进行处理，包括导出数据，导入配置，简单计算平均值；整个云端处理系统基于Web程序进行开发，提供方便的可视化交互界面与简单的数据处理。</p>
+            <p><a class="btn btn-primary btn-lg" href="#" role="button" id="login">Login</a></p>
+
+        </div>
+    </div>
+
+</body>
+</html>

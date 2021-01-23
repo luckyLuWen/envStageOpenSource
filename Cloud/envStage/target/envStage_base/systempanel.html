@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>系统管理员后台管理页面</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+        .hv:hover{
+            box-shadow: 10px 10px 20px rgba(0,0,0,0.2);
+            transform: translate3d(0,-10px,0);
+            /*transform: scale(1.5,1.5);*/
+            /*transform: skew(30deg,0);*/
+        }
+
+        .paddtop{
+            padding-top: 10px;
+        }
+        .search-btn{
+            float: left;
+            border:1px solid #ffc900;
+            width: 90px;
+            height: 35px;
+            background-color:#ffc900 ;
+            text-align: center;
+            line-height: 35px;
+            margin-top: 15px;
+        }
+
+        .search-input{
+            float: left;
+            border:2px solid #ffc900;
+            width: 400px;
+            height: 35px;
+            padding-left: 5px;
+            margin-top: 15px;
+        }
+        .jx{
+            border-bottom: 2px solid #ffc900;
+            padding: 5px;
+        }
+        .company{
+            height: 40px;
+            background-color: #ffc900;
+            text-align: center;
+            line-height:40px ;
+            font-size: 8px;
+        }
+        .explaintext{
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+        }
+    </style>
+    <script src="js/axios-0.18.0.js"></script>
+
+</head>
+<body>
+
+    <div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h2>envStage_base系统管理</h2>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row paddtop">
+                <div class="col-md-4">
+                    <div class="thumbnail hv">
+                        <a href="datashow.html">
+                            <img src="images/数据治理.png" alt="数据管理">
+                        </a>
+                        <p class="explaintext"><a href="datashow.html">数据管理</a></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="thumbnail hv">
+                        <img src="images/用户管理.png" alt="">
+                        <p class="explaintext"><a href="systemmanager.html">用户管理</p>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+
+                    <div class="thumbnail hv">
+                        <img src="images/组织管理.png" alt="">
+                        <p class="explaintext"><a href="systemmanager.html">组织管理</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row paddtop">
+                <div class="col-md-4">
+                    <div class="thumbnail hv">
+                        <img src="images/菜单管理.png" alt="" href="/systemmanager.html">
+                        <p class="explaintext"><a href="systemmanager.html">菜单管理</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="thumbnail hv">
+                        <img src="images/系统管理.png" alt="">
+                        <p class="explaintext"><a href="systemmanager.html">系统设置</p>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+
+                    <div class="thumbnail hv">
+                        <img src="images/通知管理.png" alt="">
+                        <p class="explaintext"><a href="systemmanager.html">通知</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

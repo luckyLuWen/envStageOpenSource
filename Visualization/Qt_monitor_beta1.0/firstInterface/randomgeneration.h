@@ -7,17 +7,10 @@ class randomGeneration : public QObject
 {
     Q_OBJECT
 public:
-    explicit randomGeneration(QObject *parent = nullptr);
+    explicit randomGeneration(QObject *parent = nullptr,  int buildname=0);
     float temp, humi, solarV=0.0;
     int co2=0;
-    void run();
-    /*
-public slots://defined slot
-    void run();
-
-signals:
-    void returnRandom(float, float, int, float);
-    */
+    void run(int);
 };
 
 #endif // RANDOMGENERATION_H

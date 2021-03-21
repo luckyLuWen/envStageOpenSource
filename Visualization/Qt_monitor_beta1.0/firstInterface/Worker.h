@@ -1,29 +1,28 @@
+
 #ifndef WORKER_H
 #define WORKER_H
 #include <QObject>
 #include <QDebug>
 #include <QThread>
 #include <QTimer>
-#include "randomgeneration.h"
 
+#include "randomgeneration.h"
 class Worker : public QObject
 {
   Q_OBJECT
 public:
-    //explicit Worker(QObject *parent = nullptr);
-    //explicit Worker(QObject *parent = nullptr, int buildnum=0);
     explicit Worker(int =0);
 
 signals:
     void resultReady(const QString &str);
-    void returnRandomUserFinal(float, float, int, float, int);// 向外界发送结果
+    void returnRandomUserFinal(float, float, int, float, int);// Send the results to the outside
 
 public slots:
-    void on_doSomething(); // 耗时操作
-    //void startTimer(int buildflag);
+    void on_doSomething(); // The long-running
+    //Operation of  Timer
     void startTimer();
     void stopTimer();
-    //----------------------------------------
+    //Operation of Random
     void returnRandomUser();
 
 private:
@@ -31,7 +30,7 @@ private:
     QTimer *randomTimer;
     randomGeneration *randomAll;
     bool status=false;
-    int buildnum;
+    int buildnum;   //This is also denoted as Worker Number.
 };
 
 #endif // WORKCLASSES_H

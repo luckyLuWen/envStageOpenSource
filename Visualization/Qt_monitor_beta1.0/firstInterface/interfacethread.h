@@ -11,6 +11,7 @@ class InterfaceThread : public QObject
 public:
     explicit InterfaceThread(QObject *parent = nullptr);
 
+    //Worker includes A Timer*  & A RandomGenerator*
     Worker *m_worker0;
     Worker *m_worker1;
     Worker *m_worker2;
@@ -22,8 +23,8 @@ public:
     QThread m_workThread3;
     ~InterfaceThread();
     void startAllTimer();
-//protected:
-    //void run(); //entrance function -- be started by a singal
+protected:
+
 };
 
 #endif // INTERFACETHREAD_H

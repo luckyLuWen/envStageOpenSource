@@ -5,9 +5,10 @@ FirstWenyi::FirstWenyi(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::FirstWenyi)
 {
-    ui->setupUi(this);
-    startThread1 = new startThread(this);
-    timeTread1 = new QTimer(this);
+    ui->setupUi(this);                                  //Generate the layout
+
+    startThread1    = new startThread(this);
+    timeTread1      = new QTimer(this);
     startInit();
 
     ui->labelImage->resize(400 ,400);
@@ -15,14 +16,15 @@ FirstWenyi::FirstWenyi(QWidget *parent)
     QPixmap dest=pix.scaled(ui->labelImage->size(), Qt::KeepAspectRatioByExpanding);
     ui->labelImage->setPixmap(dest);
 
-
+    ui->lcdNumber->display("");
     connect(timeTread1, &QTimer::timeout, this, [=]{
-        static int num=0;
-        ui->lcdNumber->display(num++);
+#if DEBUG
+        //static int num=0;
+        //ui->lcdNumber->display(num++);
+#endif
     });
     connect(startThread1, &startThread::sigRun, timeTread1, &QTimer::stop);
     connect(startThread1, &startThread::sigRun, this, &FirstWenyi::startToNext);
-    //connect(startThread1, &QThread::finished, startThread1, &QObject::deleteLater);
 }
 
 FirstWenyi::~FirstWenyi()
@@ -39,7 +41,7 @@ void FirstWenyi::startInit(){
 }
 
 void FirstWenyi::startToNext(){
-//delete myself
+    //delete itself
     mainWindow1 = new MianWindowsWenyi();
     emit display(10);
     mainWindow1->show();

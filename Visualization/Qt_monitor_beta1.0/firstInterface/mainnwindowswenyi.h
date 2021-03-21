@@ -5,9 +5,7 @@
 #include <QTimer>
 #include <QString>
 #include <QtDebug>
-//------------------------------------------------------------------
-
-//------------------------------------------------------------------
+#include <QDateTime>
 #include "interfacethread.h"
 #include "chartsmy.h"
 QT_BEGIN_NAMESPACE
@@ -24,7 +22,7 @@ public:
     ~MianWindowsWenyi();
     int buildnum=4;       //create 4 timers
     int buildflag=0;        //current timer flag
-    bool direct = true;    //true ---- left side
+    bool direct = true;    //true — left side
 signals:
    void buildFlagchange();
    void buildFlagstop();
@@ -37,11 +35,15 @@ private slots:
     void on_pushButton_clicked();
     void on_pushButton_2_clicked();
 
+    void on_spinBox_valueChanged(int arg1);
+
 private:
     Ui::MainWindow *ui;
-    void showMainWindow(int num);
+    //void showMainWindow(int num);
     InterfaceThread *oneInterface;
     chartsmy *onechartsmy;
+    QDateTime *RealTime;
+    QTimer * RealTimer;
 };
 
 #endif // MIANWINDOWSWENYI_H
